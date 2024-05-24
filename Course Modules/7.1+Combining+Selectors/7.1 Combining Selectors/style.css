@@ -1,0 +1,23 @@
+/* Write your code here: */
+
+/* group */
+h1,
+h2 {
+  color: blueviolet;
+}
+/* child */
+.box > p {
+  color: firebrick;
+}
+/* descendant */
+.list li {
+  color: blue;
+}
+/* element and class chained */
+li.done {
+  color: seagreen;
+}
+
+body > ul {
+  font-size: 0.5rem;
+}

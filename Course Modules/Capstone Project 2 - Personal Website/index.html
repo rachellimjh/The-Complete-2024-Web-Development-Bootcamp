@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rachel's Portfolio</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <!-- <section id="nav-bar"></section> -->
+    <section id="about" class="about d-flex justify-content-center align-items-center">
+    <div class="container">
+      <div class="container col-xxl-8 px-4 py-5 ">
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+          <div class="col-10 col-sm-8 col-lg-6">
+            <img
+              src="./images/profile.jpg" 
+              class="d-block mx-lg-auto img-fluid profile-img" 
+              alt="profile photo"
+            />
+          </div>
+          <div class="col-lg-6 ">
+            <h1 class="display-5 fw-bold text-white lh-1 mb-3">
+              I'm Rachel☻
+            </h1>
+            <p class="lead arvo-regular">Student. Programmer. Coffee Addict. </p>
+            <p class="arvo-regular">I'm studying Data Science and Artificial Intelligence at Nanyang Technological University.</p>
+        </div>
+      </div>
+    </div>
+    </section>
+    <section id="skills">
+        <div class="container px-4 py-5" id="featured-3">
+            <h2 class="pb-2 border-bottom">My Skills</h2>
+            <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+              <div class="feature col">
+                <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-bar-chart-fill" viewBox="0 0 16 16">
+                        <path d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1z"/>
+                      </svg>
+                </div>
+                <h3 class="fs-2 text-body-emphasis">Statistical Data Analysis</h3>
+                <p>Data Cleaning: Preprocessing and preparing data for analysis.<br>
+                Exploratory Data Analysis (EDA): Understanding the data's structure and relationships.<br>
+                Hypothesis Testing: Testing hypotheses and drawing conclusions from data.</p> 
+                
+              </div>
+              <div class="feature col">
+                <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-robot" viewBox="0 0 16 16">
+                        <path d="M6 12.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5M3 8.062C3 6.76 4.235 5.765 5.53 5.886a26.6 26.6 0 0 0 4.94 0C11.765 5.765 13 6.76 13 8.062v1.157a.93.93 0 0 1-.765.935c-.845.147-2.34.346-4.235.346s-3.39-.2-4.235-.346A.93.93 0 0 1 3 9.219zm4.542-.827a.25.25 0 0 0-.217.068l-.92.9a25 25 0 0 1-1.871-.183.25.25 0 0 0-.068.495c.55.076 1.232.149 2.02.193a.25.25 0 0 0 .189-.071l.754-.736.847 1.71a.25.25 0 0 0 .404.062l.932-.97a25 25 0 0 0 1.922-.188.25.25 0 0 0-.068-.495c-.538.074-1.207.145-1.98.189a.25.25 0 0 0-.166.076l-.754.785-.842-1.7a.25.25 0 0 0-.182-.135"/>
+                        <path d="M8.5 1.866a1 1 0 1 0-1 0V3h-2A4.5 4.5 0 0 0 1 7.5V8a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1v1a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-1a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1v-.5A4.5 4.5 0 0 0 10.5 3h-2zM14 7.5V13a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V7.5A3.5 3.5 0 0 1 5.5 4h5A3.5 3.5 0 0 1 14 7.5"/>
+                      </svg>
+                </div>
+                <h3 class="fs-2 text-body-emphasis">Machine Learning and AI</h3>
+                <p>Supervised Learning: Regression, decision tree, classification methods. <br>
+                    Unsupervised Learning: Clustering. <br>
+                    Reinforcement Learning: Monte-Carlo, Q-learning.
+                </p>
+                
+              </div>
+              <div class="feature col">
+                <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
+                        <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.24 2.24 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.3 6.3 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5"/>
+                      </svg>
+                </div>
+                <h3 class="fs-2 text-body-emphasis">Soft Skills</h3>
+                <p>Communication skills to work well in a group setting.<br>
+                    Problem-solving skills where I can think out of the box to solve complex issues.
+                </p>
+
+              </div>
+            </div>
+          </div>
+    </section>
+    <section id="projects"></section>
+    <section id="contact">
+        <div class="container my-5">
+            <div class="p-5 text-center bg-body-tertiary rounded-3">
+              <h2 class="text-body-emphasis">Get In Touch</h2>
+              <p class="col-lg-8 mx-auto fs-5 text-muted">
+                Feel free to drop me an email or connect on LinkedIn. <br>
+                Happy to learn and discuss more about anything related :)
+              </p>
+              <div class="d-inline-flex gap-2 mb-5">
+                <button class="d-inline-flex align-items-center btn btn-primary btn-lg px-4 rounded-pill" type="button">
+                    <a class="btn text-white" href="mailto:rachellimjh@gmail.com">Contact Me</a>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                    <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+    </section>
+    <section id="footer">
+        <div class="container">
+            <footer class="py-3 my-4">
+              <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                <li class="nav-item"><a href="https://github.com/rachellimjh" class="nav-link px-2 text-body-secondary">GitHub</a></li>
+                <li class="nav-item"><a href="https://www.linkedin.com/in/rachellim-linjiahuan/" class="nav-link px-2 text-body-secondary">LinkedIn</a></li>
+                
+              </ul>
+              <p class="text-center text-body-secondary">© 2024 Rachel</p>
+            </footer>
+          </div>
+    </section>
+  </body>
+</html>

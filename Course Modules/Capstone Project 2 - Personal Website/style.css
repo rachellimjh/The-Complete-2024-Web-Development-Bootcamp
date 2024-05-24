@@ -1,0 +1,46 @@
+.about {
+  background-image: linear-gradient(
+      to top,
+      rgb(255, 255, 255, 0.4),
+      rgba(72, 141, 231, 0.7)
+    ),
+    url("./images/autumn.jpg");
+  background-size: cover; /* Ensures the image covers the entire area */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat;
+  height: 100vh;
+  color: white;
+}
+
+.profile-img {
+  height: 250px;
+  border-radius: 50%;
+}
+.feature-icon {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 0.75rem;
+}
+.arvo-regular {
+  font-family: "Arvo", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.arvo-bold {
+  font-family: "Arvo", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.arvo-regular-italic {
+  font-family: "Arvo", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.arvo-bold-italic {
+  font-family: "Arvo", serif;
+  font-weight: 700;
+  font-style: italic;
+}
