@@ -9,6 +9,7 @@ function logger(req, res, next) {
   console.log("Request Method: ", req.method);
   console.log("Request URL : ", req.url);
   //in order to pass the control to the next function/ middleware
+  //next() is needed
   next();
 }
 
