@@ -14,3 +14,12 @@ app.get("/", (req, res) => {
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
+
+//implementing the post creation feature
+//creating the form on the home page
+//handling the form submission in the server
+app.post("/create-post", (req, res) => {
+  const { title, date, content } = req.body;
+  const newPost = { title, date, content };
+  res.render("index.ejs", { post: newPost });
+});

@@ -1,1 +1,24 @@
-<%- include("partials/header.ejs") %> <%- include("partials/footer.ejs") %>
+<%- include("partials/header.ejs") %>
+
+<!-- implementing the post creation feature
+creating the form on the home page
+handling the form submission in the server -->
+
+<%if (locals.post){%>
+<h1>Your Blog Post</h1>
+<p>Date: <%= post.date %></p>
+<p>Title: <%= post.title %></p>
+<p>Content: <%=post.content%></p>
+<%} else{%>
+<h1>Create A New Blog Post!</h1>
+<%}%>
+
+<form action="/create-post" method="POST">
+  <input type="date" name="date" placeholder="Date" />
+  <input type="text" name="title" placeholder="Title" />
+  <input type="text" name="content" placeholder="Content" />
+  <input type="submit" value="POST" />
+  <!-- when we change the value of "", it changes the text inside of the button -->
+</form>
+
+<%- include("partials/footer.ejs") %>
