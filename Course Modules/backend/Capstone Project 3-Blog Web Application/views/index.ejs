@@ -3,16 +3,6 @@
 <!-- implementing the post creation feature
 creating the form on the home page
 handling the form submission in the server -->
-
-<%if (locals.post){%>
-<h1>Your Blog Post</h1>
-<p>Date: <%= post.date %></p>
-<p>Title: <%= post.title %></p>
-<p>Content: <%=post.content%></p>
-<%} else{%>
-<h1>Create A New Blog Post!</h1>
-<%}%>
-
 <form action="/create-post" method="POST">
   <input type="date" name="date" placeholder="Date" />
   <input type="text" name="title" placeholder="Title" />
@@ -20,5 +10,24 @@ handling the form submission in the server -->
   <input type="submit" value="POST" />
   <!-- when we change the value of "", it changes the text inside of the button -->
 </form>
+<%if (posts.length > 0){%>
+<ul>
+  <%posts.forEach((post,index)=>{%>
+  <h1>Posts</h1>
+  <li>
+    <h2><%= post.title %></h2>
+    <p><%= post.date %></p>
+    <p><%=post.content%></p>
+    <form action="/edit-post/<%= index %>" method="GET">
+      <input type="submit" value="edit" />
+    </form>
+    <form action="/delete-post/<%= index %>" method="POST">
+      <input type="submit" value="delete" />
+    </form>
+  </li>
+  <%})%> <%} else{%>
+  <h1>Create A New Blog Post!</h1>
+  <%}%>
+</ul>
 
 <%- include("partials/footer.ejs") %>
