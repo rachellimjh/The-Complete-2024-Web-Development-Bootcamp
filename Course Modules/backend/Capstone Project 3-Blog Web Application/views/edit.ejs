@@ -1,11 +1,16 @@
 <%- include("partials/header.ejs") %>
 
-<h1>Edit Post</h1>
-<form action="/update-post/<%= index %>" method="POST">
-  <input type="text" name="title" value="<%= post.title %>" />
-  <input type="date" name="date" value="<%= post.date %>" />
-  <input type="text" name="content" value="<%= post.content %>" />
-  <input type="submit" value="save" />
-</form>
+<% if (post) { %>
+  <h1>Edit Post</h1>
+  <form action="/update-post/<%= index %>" method="POST" class="create-post-form">
+    <input type="date" name="date" value="<%= post.date %>" />
+    <input type="text" name="title" value="<%= post.title %>" />
+    <input type="text" name="content" value="<%= post.content %>" />
+    <input type="submit" value="save" />
+  </form>
+<% } else { %>
+  <h1>Post Not Found</h1>
+  <p>The post you are trying to edit does not exist.</p>
+<% } %>
 
 <%- include("partials/footer.ejs") %>

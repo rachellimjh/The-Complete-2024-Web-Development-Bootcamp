@@ -1,0 +1,53 @@
+body {
+  font-family: "Trebuchet MS", sans-serif;
+  background-color: #d2e0fb;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Form styles */
+.create-post-form {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center; /* Centers children horizontally */
+  align-items: center; /* Centers children vertically */
+  gap: 10px; /* Adds space between items */
+}
+
+.create-post-form input[type="text"],
+.create-post-form input[type="date"],
+.create-post-form input[type="submit"] {
+  width: 100%;
+  padding: 10px; /*size of each input box*/
+  border: 1px solid #ddd; /*so that colour of the border of input box is not so harsh and ugly*/
+  border-radius: 5px;
+}
+
+form input[type="submit"] {
+  background-color: #8eaccd;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.button-container {
+  display: flex; /* Align buttons side by side */
+  gap: 10px; /* Space between buttons */
+}
+
+/* Style for buttons within .button-container */
+.button-container form input[type="submit"] {
+  height: 40px; /* Adjust the height as needed */
+  width: auto; /* Width is based on content */
+  padding: 0 15px; /* Add horizontal padding to ensure text isn't cramped */
+  border: none;
+  border-radius: 5px; /* Rounded corners */
+  background-color: #8eaccd; /* Background color */
+  color: #fff; /* Text color */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+form input[type="submit"]:hover {
+  background-color: #6193e5;
+}

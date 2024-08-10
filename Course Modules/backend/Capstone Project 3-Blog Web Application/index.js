@@ -15,6 +15,7 @@ app.listen(port, () => {
 app.get("/", (req, res) => {
   res.render("index.ejs", { posts });
 });
+
 app.get("/edit-post/:index", (req, res) => {
   const { index } = req.params;
   const post = posts[index];
@@ -28,7 +29,8 @@ app.post("/create-post", (req, res) => {
   const { title, date, content } = req.body;
   const newPost = { title, date, content };
   posts.push(newPost);
-  res.render("index.ejs", { posts: posts });
+  // res.render("index.ejs", { posts: posts });
+  res.redirect("/");
 });
 
 //to edit posts
@@ -36,12 +38,14 @@ app.post("/update-post/:index", (req, res) => {
   const { index } = req.params;
   const { title, date, content } = req.body;
   posts[index] = { title, date, content };
-  res.render("index.ejs", { posts: posts });
+  // res.render("index.ejs", { posts: posts });
+  res.redirect("/");
 });
 
 //to delete posts
 app.post("/delete-post/:index", (req, res) => {
   const { index } = req.params;
   posts.splice(index, 1);
-  res.render("index.ejs", { posts: posts });
+  // res.render("index.ejs", { posts: posts });
+  res.redirect("/");
 });

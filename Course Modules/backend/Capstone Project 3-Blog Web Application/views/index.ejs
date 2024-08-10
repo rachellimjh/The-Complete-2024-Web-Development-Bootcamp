@@ -5,30 +5,33 @@ creating the form on the home page
 handling the form submission in the server -->
 
 <%if (posts.length > 0){%>
-  <form action="/create-post" method="POST">
-    <input type="date" name="date" placeholder="Date" />
-    <input type="text" name="title" placeholder="Title" />
-    <input type="text" name="content" placeholder="Content" />
-    <input type="submit" value="POST" />
-    <!-- when we change the value of "", it changes the text inside of the button -->
-  </form>
+<form action="/create-post" method="POST" class="create-post-form">
+  <input type="date" name="date" placeholder="Date" />
+  <input type="text" name="title" placeholder="Title" />
+  <input type="text" name="content" placeholder="Content" />
+  <input type="submit" value="POST" />
+  <!-- when we change the value of "", it changes the text inside of the button -->
+</form>
 <ul>
-  <%posts.forEach((post,index)=>{%>
   <h1>Posts</h1>
+
+  <%posts.forEach((post,index)=>{%>
   <li>
     <h2><%= post.title %></h2>
     <p><%= post.date %></p>
     <p><%=post.content%></p>
-    <form action="/edit-post/<%= index %>" method="GET">
-      <input type="submit" value="edit" />
-    </form>
-    <form action="/delete-post/<%= index %>" method="POST">
-      <input type="submit" value="delete" />
-    </form>
+    <div class="button-container">
+      <form action="/edit-post/<%= index %>" method="GET">
+        <input type="submit" value="edit" />
+      </form>
+      <form action="/delete-post/<%= index %>" method="POST">
+        <input type="submit" value="delete" />
+      </form>
+    </div>
   </li>
   <%})%> <%} else{%>
   <h1>Create A New Blog Post!</h1>
-  <form action="/create-post" method="POST">
+  <form action="/create-post" method="POST" class="create-post-form">
     <input type="date" name="date" placeholder="Date" />
     <input type="text" name="title" placeholder="Title" />
     <input type="text" name="content" placeholder="Content" />
