@@ -8,8 +8,8 @@ const API_URL = "https://secrets-api.appbrewery.com";
 //TODO 1: Fill in your values for the 3 types of auth.
 const yourUsername = "rachel";
 const yourPassword = "rach123";
-const yourAPIKey = "62d42407-f2e2-4767-8e47-29d325555182";
-const yourBearerToken = "145df969-e33e-4a39-a73f-3f04919ef6ab";
+const yourAPIKey = "ec2f9f0a-3c64-4334-b82c-d54967c2481a";
+const yourBearerToken = "a6db4f12-c1eb-48dd-b9c9-ef99e33d5740";
 
 app.get("/", (req, res) => {
   res.render("index.ejs", { content: "API Response." });
@@ -84,9 +84,7 @@ app.get("/bearerToken", async (req, res) => {
   */
   try {
     const result = await axios.get(API_URL + "/secrets/2", {
-      headers: {
-        Authorization: yourBearerToken,
-      },
+      headers: { Authorization: `Bearer ${yourBearerToken}` },
     });
     res.render("index.ejs", { content: JSON.stringify(result.data) });
   } catch (error) {
