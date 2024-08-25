@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>artsy fartsy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles/main.css" />
+  </head>
+
+  <body>
+    <h1>masterpiece.</h1>
+    <form id="searchForm" method="POST">
+      <label for="artistInput">enter an artist/artwork:  </label>
+      <input type="text" id="artistInput" name="artistInput" />
+
+      <input id="get" type="submit" value="POST" formaction="/get-art" />
+    </form>
+    <% if (locals.content){%>
+    <div class="card">
+      <h1>search results:</h1>
+
+      <% content.forEach(item => { %>
+      <p>
+        title: <%= item.title[0] %><br />
+        origin: <%= item.country %><br />
+        year: <%= item.year %><br />
+        <% if (item.dcCreatorLangAware) { %>
+          <% const creators = item.dcCreatorLangAware.def || item.dcCreatorLangAware.en || []; %>
+          <% creators.forEach(creator => { %>
+              curator: <%= creator %></br>
+          <% }); %>
+      <% } %>
+        description: <%= item.dcDescription %><br />
+        <img src="<%= item.edmPreview %>" alt="Image Description" style="max-width: 100%; height: auto;">
+      </p>
+      <br />
+      <% }); %>
+    </div>
+    <%}%>
+  </body>
+</html>
