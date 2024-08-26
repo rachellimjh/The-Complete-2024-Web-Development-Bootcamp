@@ -1,45 +1,59 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>artsy fartsy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet" />
     <link rel="stylesheet" href="/styles/main.css" />
-  </head>
+</head>
 
-  <body>
-    <h1>masterpiece.</h1>
-    <form id="searchForm" method="POST">
-      <label for="artistInput">enter an artist/artwork:  </label>
-      <input type="text" id="artistInput" name="artistInput" />
-
-      <input id="get" type="submit" value="POST" formaction="/get-art" />
-    </form>
-    <% if (locals.content){%>
-    <div class="card">
-      <h1>search results:</h1>
-
-      <% content.forEach(item => { %>
-      <p>
-        title: <%= item.title[0] %><br />
-        origin: <%= item.country %><br />
-        year: <%= item.year %><br />
-        <% if (item.dcCreatorLangAware) { %>
-          <% const creators = item.dcCreatorLangAware.def || item.dcCreatorLangAware.en || []; %>
-          <% creators.forEach(creator => { %>
-              curator: <%= creator %></br>
-          <% }); %>
-      <% } %>
-        description: <%= item.dcDescription %><br />
-        <img src="<%= item.edmPreview %>" alt="Image Description" style="max-width: 100%; height: auto;">
-      </p>
-      <br />
-      <% }); %>
+<body>
+    <div class="container my-4">
+        <h1>masterpiece.</h1>
+        <form id="searchForm" method="POST" class="mb-4">
+            <label for="artistInput" class="form-label">enter an artist/artwork: </label>
+            <div class="input-group">
+                <input type="text" id="artistInput" name="artistInput" class="form-control" />
+                <input id="get" type="submit" value="POST" formaction="/get-art" class="btn btn-primary" />
+            </div>
+        </form>
+        <% if (locals.content) { %>
+        <h2>search results:</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <% content.forEach(item => { %>
+            <div class="col">
+                <div class="card h-100">
+                    <img class="card-img-top" src="<%= item.edmPreview %>" alt="image description"
+                        style="max-width: 100%; height: auto;">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">title: <%= item.title[0] %></h5>
+                        <p class="card-text">origin: <%= item.country %></p>
+                        <p class="card-text">year: <%= item.year %></p>
+                        <p class="card-text">
+                            <% if (item.dcCreatorLangAware) { %>
+                            <% const creators = item.dcCreatorLangAware.def || item.dcCreatorLangAware.en || []; %>
+                            <% creators.forEach(creator => { %>
+                            curator: <%= creator %><br>
+                            <% }); %>
+                            <% } %>
+                        </p>
+                        <a href="<%= item. %>" class="btn btn-primary mt-auto">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <% }); %>
+        </div>
+        <% } %>
     </div>
-    <%}%>
-  </body>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
 </html>
